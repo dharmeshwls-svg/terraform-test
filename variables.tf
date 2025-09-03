@@ -48,32 +48,39 @@ variable "exclude_resource_tags" {
 
 }
 
-# variable "nacl_config" {
-#   description = "nacl configurations "
-#   type = map(map(object({
-#     vpc_cidr_block       = string
-#     public_subnet_cidrs  = list(string)
-#     private_subnet_cidrs = list(string)
-#     nacl_public_rules = object({
-#       ingress = list(object({
-#         rule_number = number
-#         protocol    = string
-#         action      = string
-#         cidr_block  = string
-#         from_port   = number
-#         to_port     = number
-#       }))
-#       egress = list(object({
-#         rule_number = number
-#         protocol    = string
-#         action      = string
-#         cidr_block  = string
-#         from_port   = number
-#         to_port     = number
-#       }))
-#     })
-#   })))
-#   default = {
+variable "core_network_name" {
+  description = "Name for the AWS CloudWAN Core Network"
+  type        = string
+  default = "my-core-network"
+}
 
-#   }
+variable "description" {
+  description = "Description for the CloudWAN Core Network"
+  type        = string
+  default     = ""
+}
+
+
+variable "edge_locations" {
+  description = "List of AWS regions as Edge Locations"
+  type        = list(string)
+  default     = []
+}
+
+variable "tags" {
+  description = "A map of tags to assign to the resources."
+  type        = map(string)
+  default     = {}
+}
+variable "segments" {
+  description = "Map of segment names to their asn_ranges and edge_locations"
+  type = map(object({
+    asn_ranges     = list(string)
+    edge_locations = list(string)
+  }))
+}
+
+# variable "segments" {
+#   description = "List of segments for CloudWAN"
+#   type        = list(string)
 # }

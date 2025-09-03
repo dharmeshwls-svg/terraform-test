@@ -59,3 +59,13 @@ module "sgfw" {
   security_service_policy_data = var.security_service_policy_data
   exclude_resource_tags        = var.exclude_resource_tags
 }
+
+
+module "cloudwan" {
+  source                 = "./module/cloudwan"
+  core_network_name      = var.core_network_name
+  description            = var.description
+  segments               = var.segments
+  edge_locations         = var.edge_locations
+  tags                   = var.tags
+}

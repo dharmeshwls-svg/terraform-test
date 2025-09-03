@@ -7,3 +7,13 @@ security_service_policy_data = {
   type = "AWS::FMS::Policy"
   managed_service_data = "{\"type\":\"AWS::FMS::Policy\"}"
 }
+segments = {
+  prod = {
+    asn_ranges     = ["64512-64520"]
+    edge_locations = ["us-east-1"]
+  }
+  dev = {
+    asn_ranges     = ["64521-64530"]
+    edge_locations = ["us-west-2"]
+  }
+}
