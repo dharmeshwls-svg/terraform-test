@@ -62,10 +62,10 @@ module "sgfw" {
 
 
 module "cloudwan" {
-  source                 = "./module/cloudwan"
-  core_network_name      = var.core_network_name
-  description            = var.description
-  segments               = var.segments
-  edge_locations         = var.edge_locations
-  tags                   = var.tags
+  source            = "./module/cloudwan"
+  core_network_name = var.core_network_name
+  description       = var.description
+  segments          = var.segments
+  edge_locations    = var.edge_locations
+  tags              = var.tags
 }

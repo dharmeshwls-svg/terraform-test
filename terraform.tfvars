@@ -4,7 +4,7 @@ public_subnet_cidrs  = ["10.0.1.0/24", "10.0.2.0/24"]
 domain_name          = "dcloudlabs.net"
 policy_name          = "Firewall security group policy for overly permissive security groups"
 security_service_policy_data = {
-  type = "AWS::FMS::Policy"
+  type                 = "AWS::FMS::Policy"
   managed_service_data = "{\"type\":\"AWS::FMS::Policy\"}"
 }
 segments = {

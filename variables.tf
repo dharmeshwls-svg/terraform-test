@@ -51,7 +51,7 @@ variable "exclude_resource_tags" {
 variable "core_network_name" {
   description = "Name for the AWS CloudWAN Core Network"
   type        = string
-  default = "my-core-network"
+  default     = "my-core-network"
 }
 
 variable "description" {
